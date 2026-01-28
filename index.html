@@ -21,16 +21,30 @@
     <!-- Main interactive area -->
     <div class="main">
       <nav class="sidebar">
-        <button class="tab active">about</button>
-        <button class="tab">writing</button>
-        <button class="tab">resources</button>
+        <button class="tab active" data-tab="about">about</button>
+        <button class="tab" data-tab="writing">writing</button>
+        <button class="tab" data-tab="resources">resources</button>
       </nav>
 
       <section class="content">
-        <p>
-          this is where the action happens.
-        </p>
-      </section>
+  <div class="panel active" data-panel="about">
+    <p>
+      
+    </p>
+  </div>
+
+  <div class="panel" data-panel="writing">
+    <p>
+      
+    </p>
+  </div>
+
+  <div class="panel" data-panel="resources">
+    <p>
+      
+    </p>
+  </div>
+</section>
     </div>
 
   </div>
