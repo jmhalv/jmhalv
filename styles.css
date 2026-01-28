@@ -24,9 +24,71 @@ body {
   width: 90vw;
   height: 90vh;
   background: rgba(255, 255, 255, 0.7);
-  overflow-y: auto;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.header .email {
+  margin-top: 0.5rem;
+  opacity: 0.8;
+}
+
+/* Divider */
+.divider {
+  margin: 1.5rem 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* Main area */
+.main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 180px;
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tab {
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  padding: 0.5rem 0.25rem;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.tab:hover {
+  opacity: 1;
+}
+
+.tab.active {
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* Content area */
+.content {
+  flex: 1;
+  padding-left: 1.5rem;
+  overflow-y: auto;
 }
