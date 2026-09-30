@@ -1,1 +1,1 @@
-Today's message: <!-- QUOTE:START -->Is that an excellence?<!-- QUOTE:END -->
+Today's quote: "<!-- QUOTE:START -->Is that an excellence?<!-- QUOTE:END -->"
