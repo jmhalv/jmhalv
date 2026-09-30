@@ -1,1 +1,1 @@
-Today's message: <!-- QUOTE:START -->$\color{#8250df}{\text{x}}$<!-- QUOTE:END -->
+Today's message: <!-- QUOTE:START -->$\color{#8250df}{\text{Is that an excellence?}}$<!-- QUOTE:END -->
