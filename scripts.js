@@ -19,3 +19,18 @@ tabs.forEach(tab => {
     document.title = `John Halvorson ⋅ ${tabTitles[target]}`;
   });
 });
+
+const quoteEl = document.getElementById("quote");
+
+if (quoteEl) {
+  fetch("quotes.txt")
+    .then(res => res.text())
+    .then(text => {
+      const quotes = text.split("\n").map(q => q.trim()).filter(Boolean);
+      if (quotes.length === 0) return;
+
+      const pick = quotes[Math.floor(Math.random() * quotes.length)];
+      quoteEl.textContent = `\u201C${pick}\u201D`;
+    })
+    .catch(() => {});
+}
