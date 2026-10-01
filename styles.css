@@ -156,3 +156,16 @@ body {
   border-radius: 3px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+}
+
+.quote {
+  color: #666;
+  font-style: italic;
+  text-align: right;
+  max-width: 24em;
+}
