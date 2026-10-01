@@ -23,14 +23,28 @@ tabs.forEach(tab => {
 const quoteEl = document.getElementById("quote");
 
 if (quoteEl) {
-  fetch("quotes.txt")
+  let quotes = [];
+  let current = -1;
+
+  const showRandomQuote = () => {
+    if (quotes.length === 0) return;
+
+    let i;
+    do {
+      i = Math.floor(Math.random() * quotes.length);
+    } while (i === current && quotes.length > 1);
+
+    current = i;
+    quoteEl.textContent = `\u201C${quotes[i]}\u201D`;
+  };
+
+  fetch("quotes.txt", { cache: "no-cache" })
     .then(res => res.text())
     .then(text => {
-      const quotes = text.split("\n").map(q => q.trim()).filter(Boolean);
-      if (quotes.length === 0) return;
-
-      const pick = quotes[Math.floor(Math.random() * quotes.length)];
-      quoteEl.textContent = `\u201C${pick}\u201D`;
+      quotes = text.split("\n").map(q => q.trim()).filter(Boolean);
+      showRandomQuote();
     })
     .catch(() => {});
+
+  quoteEl.addEventListener("click", showRandomQuote);
 }
