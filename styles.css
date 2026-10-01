@@ -98,3 +98,29 @@ body {
 .panel.active {
   display: block;
 }
+
+.icon {
+  width: 1.1em;
+  height: 1.1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: -0.15em;
+  margin-right: 0.4em;
+}
+
+.badge {
+  display: inline-block;
+  margin-left: 0.5em;
+  padding: 0.1em 0.6em;
+  border-radius: 0.6em;
+  font-size: 0.75em;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.badge-complete { background: #d4f4dd; color: #1b6b35; }
+.badge-todo     { background: #fbd9d9; color: #9b1c1c; }
+.badge-progress { background: #fdf0b8; color: #7a5b00; }
