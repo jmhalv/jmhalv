@@ -1,10 +1,5 @@
 const tabs = document.querySelectorAll(".tab");
 const panels = document.querySelectorAll(".panel");
-const tabTitles = {
-  about: "About",
-  writing: "Writing",
-  resources: "Resources"
-};
 
 tabs.forEach(tab => {
   tab.addEventListener("click", () => {
@@ -16,7 +11,7 @@ tabs.forEach(tab => {
     tab.classList.add("active");
     document.querySelector(`.panel[data-panel="${target}"]`).classList.add("active");
 
-    document.title = `John Halvorson ⋅ ${tabTitles[target]}`;
+    document.title = `John Halvorson ⋅ ${target}`;
   });
 });
 
