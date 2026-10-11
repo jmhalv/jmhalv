@@ -1,1 +1,1 @@
-Today's message: <!-- QUOTE:START -->$\color{#8250df}{\text{Anyone who claims to know how cameras work is a liar.}}$<!-- QUOTE:END -->
+Today's message: <!-- QUOTE:START -->$\color{#8250df}{\text{Some beavers are objectively untrustworthy.}}$<!-- QUOTE:END -->
