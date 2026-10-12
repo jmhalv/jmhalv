@@ -141,7 +141,9 @@ body {
 }
 
 .book-thoughts {
-  display: flow-root;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .book-thoughts p {
@@ -149,12 +151,31 @@ body {
 }
 
 .book-cover {
-  float: left;
+  flex-shrink: 0;
   width: 4.5rem;
   height: auto;
-  margin: 0 1rem 0.5rem 0;
   border-radius: 3px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.book-review {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.5;
+}
+
+.book-review p + p,
+.book-review ol + p {
+  margin-top: 0.9rem;
+}
+
+.book-review ol {
+  margin: 0.9rem 0;
+  padding-left: 1.75em;
+}
+
+.book-review li + li {
+  margin-top: 0.5rem;
 }
 
 .header-right {
