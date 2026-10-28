@@ -33,14 +33,17 @@ body {
 }
 
 /* Header */
-.header h1 {
-  font-size: 2.2rem;
-  font-weight: 600;
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
 }
 
-.header .email {
-  margin-top: 0.5rem;
-  opacity: 0.8;
+.quote {
+  color: #666;
+  font-style: italic;
+  text-align: right;
+  max-width: 24em;
 }
 
 /* Divider */
@@ -57,136 +60,48 @@ body {
   overflow: hidden;
 }
 
-/* Sidebar */
-.sidebar {
-  width: 240px;
-  border-right: 1px solid rgba(0, 0, 0, 0.15);
-  padding-right: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.tab {
-  background: none;
-  border: none;
-  text-align: left;
-  font-size: 1rem;
-  padding: 0.5rem 0.25rem;
-  cursor: pointer;
-  opacity: 0.7;
-}
-
-.tab:hover {
-  opacity: 1;
-}
-
-.tab.active {
-  font-weight: 600;
-  opacity: 1;
-}
-
 .content {
   flex: 1;
-  padding-left: 1.5rem;
   overflow-y: auto;
-}
-.panel {
-  display: none;
-}
-
-.panel.active {
-  display: block;
-}
-
-.icon {
-  width: 1.1em;
-  height: 1.1em;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  vertical-align: -0.15em;
-  margin-right: 0.4em;
-}
-
-.badge {
-  display: inline-block;
-  margin-left: 0.5em;
-  padding: 0.1em 0.6em;
-  border-radius: 0.6em;
-  font-size: 0.75em;
-  font-weight: 600;
-  vertical-align: middle;
-}
-
-.badge-complete { background: #d4f4dd; color: #1b6b35; }
-.badge-todo     { background: #fbd9d9; color: #9b1c1c; }
-.badge-progress { background: #fdf0b8; color: #7a5b00; }
-
-.book-list {
-  list-style: disc;
-  padding-left: 1.5em;
-  margin: 1.25rem 0 0;
-}
-
-.book {
-  margin-bottom: 1.75rem;
-}
-
-.book-title {
-  margin: 0 0 0.6rem;
-  font-weight: 600;
-}
-
-.book-thoughts {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.book-thoughts p {
-  margin: 0;
-}
-
-.book-cover {
-  flex-shrink: 0;
-  width: 4.5rem;
-  height: auto;
-  border-radius: 3px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-}
-
-.book-review {
-  flex: 1;
-  min-width: 0;
   line-height: 1.5;
 }
 
-.book-review p + p,
-.book-review ol + p {
+/* Links */
+a {
+  color: #0645ad;
+}
+
+/* Sections on the main page */
+.block + .block {
+  margin-top: 2rem;
+}
+
+.block h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.block p + p {
   margin-top: 0.9rem;
 }
 
-.book-review ol {
-  margin: 0.9rem 0;
-  padding-left: 1.75em;
+/* Entry list */
+.entry-list {
+  list-style: none;
 }
 
-.book-review li + li {
-  margin-top: 0.5rem;
+.entry-list li + li {
+  margin-top: 0.35rem;
 }
 
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 0.75em;
+/* Entry view */
+.back {
+  display: inline-block;
+  margin-bottom: 1.25rem;
 }
 
-.quote {
-  color: #666;
-  font-style: italic;
-  text-align: right;
-  max-width: 24em;
+.entry-text {
+  white-space: pre-wrap;
+  max-width: 70ch;
 }
