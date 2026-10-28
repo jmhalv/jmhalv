@@ -1,19 +1,92 @@
-const tabs = document.querySelectorAll(".tab");
-const panels = document.querySelectorAll(".panel");
+const content = document.querySelector(".content");
+const homeView = document.getElementById("home-view");
+const entryView = document.getElementById("entry-view");
+const entryText = document.getElementById("entry-text");
+const entryList = document.getElementById("entry-list");
 
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-    const target = tab.dataset.tab;
+let homeScroll = 0;
 
-    tabs.forEach(t => t.classList.remove("active"));
-    panels.forEach(p => p.classList.remove("active"));
+/* ---------- Entries list ---------- */
 
-    tab.classList.add("active");
-    document.querySelector(`.panel[data-panel="${target}"]`).classList.add("active");
+// entries.txt holds one filename per line, e.g. 2026-10-27.txt
+// The files themselves live in the entries/ folder.
+fetch("entries.txt", { cache: "no-cache" })
+  .then(res => res.text())
+  .then(text => {
+    const names = text
+      .split("\n")
+      .map(n => n.trim())
+      .filter(Boolean)
+      .sort()
+      .reverse(); // newest first (ISO dates sort alphabetically)
 
-    document.title = `John Halvorson ⋅ ${target}`;
+    if (names.length === 0) {
+      entryList.innerHTML = "<li>No entries yet.</li>";
+      return;
+    }
+
+    names.forEach(name => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = `#${encodeURIComponent(name)}`;
+      a.textContent = name;
+      li.appendChild(a);
+      entryList.appendChild(li);
+    });
+  })
+  .catch(() => {
+    entryList.innerHTML = "<li>No entries yet.</li>";
   });
-});
+
+/* ---------- Switching between the main page and an entry ---------- */
+
+const showHome = () => {
+  entryView.hidden = true;
+  homeView.hidden = false;
+  content.scrollTop = homeScroll;
+  document.title = "John Halvorson ⋅ Home";
+};
+
+const showEntry = async name => {
+  // Remember where we were on the main page so Back puts us there
+  if (!homeView.hidden) homeScroll = content.scrollTop;
+
+  homeView.hidden = true;
+  entryView.hidden = false;
+  content.scrollTop = 0;
+  document.title = `John Halvorson ⋅ ${name}`;
+  entryText.textContent = "";
+
+  // Only plain filenames like 2026-10-27.txt
+  if (!/^[\w-]+\.txt$/.test(name)) {
+    entryText.textContent = "Entry not found.";
+    return;
+  }
+
+  try {
+    const res = await fetch(`entries/${name}`, { cache: "no-cache" });
+    if (!res.ok) throw new Error(res.status);
+    const text = await res.text();
+    if (decodeURIComponent(location.hash.slice(1)) !== name) return; // navigated away
+    entryText.textContent = text;
+  } catch {
+    entryText.textContent = "Entry not found.";
+  }
+};
+
+const route = () => {
+  const name = decodeURIComponent(location.hash.slice(1));
+  if (name) {
+    showEntry(name);
+  } else {
+    showHome();
+  }
+};
+
+window.addEventListener("hashchange", route);
+route();
+
+/* ---------- Header quote ---------- */
 
 const quoteEl = document.getElementById("quote");
 
