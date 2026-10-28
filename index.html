@@ -9,31 +9,31 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    /* Floating webring bar */
     .webring-bar {
-      position: fixed;
-      bottom: 16px;
-      left: 50%;
-      transform: translateX(-50%);
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
 
-      width: min(500px, calc(100% - 32px));
-      height: 80px;
+  width: min(500px, calc(100% - 32px));
+  height: 80px;
 
-      background: var(--background, #fff);
-      border: 1px solid #888;
-      border-radius: 8px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 
-      overflow: hidden;
-      z-index: 1000;
-    }
+  overflow: hidden;
+  z-index: 1000;
+}
 
-    .webring-bar iframe {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+.webring-bar iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+}
 
     /* Keep page content clear of the floating bar */
     body {
@@ -190,14 +190,14 @@
     </div>
   </div>
 
-  <!-- Persistent floating webring -->
-  <div class="webring-bar">
-    <iframe
-      src="https://ringularity.signorovitch.org?site=jmhalvorson.com"
-      title="Ringularity Webring"
-      loading="eager">
-    </iframe>
-  </div>
+<div class="webring-bar">
+  <iframe
+    src="https://ringularity.signorovitch.org?site=jmhalvorson.com"
+    title="Ringularity Webring"
+    loading="eager"
+    scrolling="no">
+  </iframe>
+</div>
 
   <script src="scripts.js"></script>
 </body>
