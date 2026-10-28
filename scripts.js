@@ -11,7 +11,10 @@ let homeScroll = 0;
 // entries.txt holds one filename per line, e.g. 2026-10-27.txt
 // The files themselves live in the entries/ folder.
 fetch("entries.txt", { cache: "no-cache" })
-  .then(res => res.text())
+  .then(res => {
+    if (!res.ok) throw new Error(res.status);
+    return res.text();
+  })
   .then(text => {
     const names = text
       .split("\n")
@@ -107,7 +110,10 @@ if (quoteEl) {
   };
 
   fetch("quotes.txt", { cache: "no-cache" })
-    .then(res => res.text())
+    .then(res => {
+      if (!res.ok) throw new Error(res.status);
+      return res.text();
+    })
     .then(text => {
       quotes = text.split("\n").map(q => q.trim()).filter(Boolean);
       showRandomQuote();
