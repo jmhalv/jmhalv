@@ -1,1 +1,1 @@
-Today's message: <!-- QUOTE:START -->$\color{#8250df}{\text{Is that an excellence?}}$<!-- QUOTE:END -->
+Today's message: <!-- QUOTE:START -->$\color{#8250df}{\text{The reasons for the seasons are not Earth's distance from the Sun.}}$<!-- QUOTE:END -->
