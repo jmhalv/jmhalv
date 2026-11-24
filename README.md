@@ -1,1 +1,1 @@
-Today's message: <!-- QUOTE:START -->$\color{#8250df}{\text{There's no useful information here.}}$<!-- QUOTE:END -->
+Today's message: <!-- QUOTE:START -->$\color{#8250df}{\text{To avoid confusion, we've simplified the problem.}}$<!-- QUOTE:END -->
