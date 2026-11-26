@@ -1,1 +1,1 @@
-Today's message: <!-- QUOTE:START -->$\color{#8250df}{\text{One option is to try to guess.}}$<!-- QUOTE:END -->
+Today's message: <!-- QUOTE:START -->$\color{#8250df}{\text{I am PUTRID.}}$<!-- QUOTE:END -->
